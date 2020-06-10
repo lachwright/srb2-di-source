@@ -2078,16 +2078,16 @@ int W_VerifyNMUSlumps(const char *filename)
         char slash1c[129];
         strcpy(slash1c, "/");
         strcat(slash1c, whitelist[n]);
-        if (slash1 && !strcmpi(slash1, slash1c))
+        if (slash1 && !stricmp(slash1, slash1c))
             return 1;
         
         char slash2c[129];
         strcpy(slash2c, "\\");
         strcat(slash2c, whitelist[n]);
-        if (slash2 && !strcmpi(slash2, slash2c))
+        if (slash2 && !stricmp(slash2, slash2c))
             return 1;
         
-        else if (!strcmpi(filename, whitelist[n]))
+        else if (!stricmp(filename, whitelist[n]))
             return 1;
     }
     

@@ -127,7 +127,7 @@ UINT8 *PutFileNeeded(void)
 			continue;
 		
 		// If it has a special desync lua don't you DARE put it in the list.
-		if (strcmpi(wadfiles[i]->filename, "di_skins.lua") == 0)
+		if (stricmp(wadfiles[i]->filename, "di_skins.lua") == 0)
 			continue;
 
 		filestatus = 1; // Importance - not really used any more, holds 1 by default for backwards compat with MS
@@ -364,7 +364,7 @@ INT32 CL_CheckFiles(void)
 			
 			//nameonly(strcpy(originalwadfilename, wadfiles[j]->filename));
 
-			if (j < numwadfiles && (!wadfiles[j]->important || (strcmpi(wadfiles[j]->filename, "di_skins.lua") == 0)))
+			if (j < numwadfiles && (!wadfiles[j]->important || (stricmp(wadfiles[j]->filename, "di_skins.lua") == 0)))
 			{
 				// Unimportant on our side.
 				++j;
