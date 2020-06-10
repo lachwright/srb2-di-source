@@ -9,7 +9,7 @@ FUNCTION(PREPEND var prefix)
    SET(${var} "${listVar}" PARENT_SCOPE)
 ENDFUNCTION(PREPEND)
 
-set(SRB2_ASSET_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/installer"
+set(SRB2_ASSET_DIRECTORY "/usr/local/games/SRB2-DI"
 	CACHE STRING "Path to directory that contains all asset files for the installer.")
 
 ####################
@@ -25,7 +25,9 @@ patch.pk3"
 )
 
 set(SRB2_ASSET_DOCS
-"README.txt;\
+"DI Readme.txt;\
+README.txt;\
+README-MACOSX.txt;\
 LICENSE.txt;\
 LICENSE-3RD-PARTY.txt;\
 README-SDL.txt"

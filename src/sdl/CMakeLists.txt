@@ -363,11 +363,12 @@ if(${SDL2_FOUND})
 	# this current step points to the CMAKE build folder, NOT the folder that CPACK uses.
 	# Therefore, it makes sense to escape that var, but not the other.
 	if(${CMAKE_SYSTEM} MATCHES Darwin)
+	    set(extra_dirs "/usr/local/lib" "/lib" "/usr/lib")
 		install(CODE "
 			include(BundleUtilities)
 			fixup_bundle(\"\${CMAKE_INSTALL_PREFIX}/${CPACK_PACKAGE_DESCRIPTION_SUMMARY}.app\"
 				\"\"
-				/Library/Frameworks
+				\"${extra_dirs}\"
 			)"
 		)
 	endif()
